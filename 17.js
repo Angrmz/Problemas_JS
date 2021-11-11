@@ -1,26 +1,26 @@
-let res = "S";
+let num1 = 0;
+let num2 = 0;
+let aux = 0;
+let counter = 0;
+let flag = 0;
 
-while (res = "S") {
-  let c = 0;
-  let sum = 0;
-  let num1 = 0;
-  let num2 = -999;
-  num1 = prompt("Numero:");
-  num2 = prompt("Numero mayor que el anterior:");
+num1 = prompt("Ingrese primer numero:");
+num2 = prompt("Ingrese segundo numero:");
 
-  num1 = num1 + 1;
-  while (num1 <= (num2 - 1)) {
-    if (num1 % 2 == 0) {
-      console.log(num1);
-      c = c + 1;
-      sum = sum + num1;
-    }
-    num1 = num1 + 1;
-  }
-  console.log("Numero de multiplos de 2:", c);
-  console.log("La suma es:", sum);
-
-  while (res == "S" && res == "N") {
-    res = console.log("Escribir otra serie de numeros(S/N)");
-  }
+if (num2 < num1) {
+  aux = num2;
+  num2 = num1;
+  num1 = aux;
 }
+
+while (num1 <= num2) {
+  if (num1 % 2 ==0) {
+    console.log(num1);
+    counter++;
+    flag += num1;
+  }
+  num1++;
+}
+
+console.log("La cantidad de multiplos es:", counter);
+console.log("La suma de multiplos es:", flag);
